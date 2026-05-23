@@ -12,16 +12,23 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(135deg, #ffe6e6, #ffb3b3);
+            /* CAMBIO: Aquí se añade la imagen de BMW y sus propiedades de ajuste */
+            background-image: url('https://unsplash.com'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden;
             text-align: center;
         }
         .container {
-            background: white;
+            /* CAMBIO: Fondo semitransparente para que resalte sobre el coche */
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             z-index: 10;
         }
         h1 {
@@ -79,7 +86,6 @@
     </div>
 
     <script>
-        // El botón NO se escapa cuando el cursor se acerca
         function moverNo() {
             const btnNo = document.getElementById('no');
             const x = Math.random() * (window.innerWidth - btnNo.offsetWidth);
@@ -88,7 +94,6 @@
             btnNo.style.top = `${y}px`;
         }
 
-        // Acción al hacer clic en SÍ
         function aceptar() {
             document.getElementById('titulo').innerText = "¡SABÍA QUE DIRÍAS QUE SÍ! 😍";
             document.getElementById('si').style.display = 'none';
@@ -96,7 +101,6 @@
             setInterval(crearCorazon, 150);
         }
 
-        // Generador de corazones flotantes
         function crearCorazon() {
             const heart = document.createElement('div');
             heart.classList.add('heart');
@@ -109,4 +113,3 @@
     </script>
 </body>
 </html>
-
